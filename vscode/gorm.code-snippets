@@ -1,0 +1,59 @@
+{
+	"gorm-findall": {
+		"scope": "go",
+		"prefix": "gorm",
+		"body": [
+			"var $1 = make([]$2, 0)",
+			"tx := db.Find(&$1)",
+			"if tx.Error != nil {",
+			"\treturn nil, fmt.Errorf(\"failed to process request: %w\", tx.Error)",
+			"}",
+			"return $1, nil"
+		]
+	},
+	"gorm-service": {
+		"scope": "go",
+		"prefix": "gorm",
+		"body": [
+			"type $1Service interface {",
+				"\tCount() (int64, error)",
+				"\tCreate($3) (*$2, error)",
+				"\tFindAll() ([]$2, error)",
+				"\tFindAllByUserID(int64) ([]$2, error)",
+				"\tFindByID(int64) (*$2, error)",
+				"\tDelete(int64) (*$2, error)",
+				"\tUpdate(*$2) (bool, error)",
+			"}\n\n",
+			
+			"type $1ServiceImpl struct {",
+				"db *gorm.DB",
+			"}\n",
+			
+			"func New$1Service(db *gorm.DB) $1Service {",
+				"return &$1ServiceImpl{db}\n",
+			"}\n",
+
+			"func (s *$1ServiceImpl) Count() (int64, error) {",
+			"}\n",
+
+			"func (s *$1ServiceImpl) Create($3) (*$2, error) {",
+			"}\n",
+
+			"func (s *$1ServiceImpl) FindAll() ([]$2, error) {",
+			"",
+			"}\n",
+
+			"func (s *$1ServiceImpl) FindAllByUserID(int64) ([]$2, error) {",
+			"}\n",
+
+			"func (s *$1ServiceImpl) FindByID(int64) (*$2, error) {",
+			"}\n",
+
+			"func (s *$1ServiceImpl) Delete(int64) (*$2, error){",
+			"}\n",
+
+			"func (s *$1ServiceImpl) Update(*$2) (bool, error) {",			
+			"}",
+		]
+	}
+}
