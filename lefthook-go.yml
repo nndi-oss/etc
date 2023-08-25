@@ -1,0 +1,25 @@
+# [Lefthook](https://github.com/evilmartians/lefthook) configuration for Go projects
+# This is intended to be used in Go projects for NNDI projects both internal and OSS
+# The checks here are also expected to be run in CI such as GitHub Actions
+pre-push:
+  commands:
+    linter:
+      tags: linter
+      files: git ls-files -m
+      glob: "*.go"
+      run: golangci-lint run ./...
+    ruleguard:
+      run: ruleguard -rules rules.go ./...
+    gosec:
+      run: gosec ./...
+    wrapcheck:
+      run: wrapcheck ./...
+
+pre-commit:
+  parallel: true
+  commands:
+    gofmt:
+      tags: gofmt
+      files: git ls-files -m
+      glob: "*.go"
+      run: go fmt ./...
