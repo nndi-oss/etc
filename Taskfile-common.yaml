@@ -1,0 +1,7 @@
+version: 3
+
+tasks:
+  # use this like task build-pr -- 10
+  build-pr:
+    - gh pr checkout {{.CLI_ARGS}}
+    - task build
