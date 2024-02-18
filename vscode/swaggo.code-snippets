@@ -1,0 +1,61 @@
+{
+	"swaggo:get": {
+		"scope": "go",
+		"prefix": "swaggo:get",
+		"body": [
+			"// $1 godoc",
+			"//",
+			"//	@ID				$1",
+			"//	@Summary		$4",
+			"//	@Description	$4",
+			"//	@Tags			$2",
+			"//	@Accept			json",
+			"//	@Produce		json",
+			"//	@Success		200			{object}	interface{}",
+			"//	@Failure		400			{object}	problemdetail.ProblemDetail",
+			"//	@Failure		500			{object}	problemdetail.ProblemDetail",
+			"//	@Router			/api/$3 [get]",
+		],
+		"description": "Swaggo comment for GET route"
+	},
+	"swaggo:post": {
+		"scope": "go",
+		"prefix": "swaggo:post",
+		"body": [
+			"// $1 godoc",
+			"//",
+			"//	@ID				$1",
+			"//	@Summary		$4",
+			"//	@Description	$4",
+			"//	@Tags			$2",
+			"//	@Accept			json",
+			"//	@Produce		json",
+			"//	@Param			request	body		$5	true	\"$6\"",
+			"//	@Success		200			{object}	interface{}",
+			"//	@Failure		400			{object}	problemdetail.ProblemDetail",
+			"//	@Failure		500			{object}	problemdetail.ProblemDetail",
+			"//	@Router			/api/$3 [post]",
+		],
+		"description": "Swaggo comment for POST route"
+	},
+	"swaggo:get-with-param": {
+		"scope": "go",
+		"prefix": "swaggo:get-param",
+		"body": [
+			"// $1 godoc",
+			"//",
+			"//	@ID				$1",
+			"//	@Summary		$4",
+			"//	@Description	$4",
+			"//	@Tags			$2",
+			"//	@Accept			json",
+			"//	@Produce		json",
+			"//	@Param			$5	path		string	true	\"$6\"",
+			"//	@Success		200			{object}	interface{}",
+			"//	@Failure		400			{object}	problemdetail.ProblemDetail",
+			"//	@Failure		500			{object}	problemdetail.ProblemDetail",
+			"//	@Router			/api/$3 [get]",
+		],
+		"description": "Swaggo comment for GET route with param"
+	}
+}
