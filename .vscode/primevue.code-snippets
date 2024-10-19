@@ -1,0 +1,73 @@
+{
+	"p-inputtext": {
+		"scope": "vue,javascript,typescript,html",
+		"prefix": "pi:text",
+		"body": [
+			"<div class=\"field\">",
+			"    <label for=\"$1\">$2*</label>",
+			"    <div class=\"control\">",
+			"      <InputText id=\"$1\" v-model=\"$1\"/>",
+			"    </div>",
+			"</div>",
+		],
+		"description": "PrimeVue InputText"
+	},
+	"p-float-inputtext": {
+		"scope": "vue,javascript,typescript,html",
+		"prefix": "pi:text",
+		"body": [
+			"<div class=\"field\">",
+			"  <div class=\"p-float-label\">",
+			"    <InputText id=\"$1\" v-model=\"$1\"/>",
+			"    <label for=\"$1\">$2*</label>",
+			"  </div>",
+			"</div>",
+		],
+		"description": "PrimeVue InputText"
+	},
+	"p-password": {
+		"scope": "vue,javascript,typescript,html",
+		"prefix": "pi:pass",
+		"body": [
+			"<div class=\"field\">",
+			"  <div class=\"p-float-label\">",
+			"    <Password id=\"$1\" v-model=\"$1\"/>",
+			"    <label for=\"$1\">$2*</label>",
+			"  </div>",
+			"</div>",
+		],
+		"description": "PrimeVue Password Input"
+	},
+	"p-inputtext-validated": {
+		"scope": "vue,javascript,typescript,html",
+		"prefix": "pi:validated-text",
+		"body": [
+			"<div class=\"field\">",
+			"  <label for=\"$1\" :class=\"{ 'p-error': v$.$2.$invalid && submitted }\">$1*</label>",
+			"  <div class=\"control\">",
+			"    <InputText id=\"$1\" v-model=\"v$.$2.$model\" :class=\"{ 'p-invalid': v$.$2.$invalid && submitted }\" />",
+			"  </div>",
+			"  <small v-if=\"(v$.$2.$$invalid && submitted) || v$.$2.$$pending.$$response\" class=\"p-error\">",
+			"    {{v$.$2.required.$$message.replace(\"Value\", \"$1\") }}",
+			"  </small>",
+			"</div>",
+		],
+		"description": "PrimeVue InputText with Validation"
+	},
+	"p-password-validated": {
+		"scope": "vue,javascript,typescript,html",
+		"prefix": "pi:validated-password",
+		"body": [
+			"<div class=\"field\">",
+			"<div class=\"p-float-label\">",
+			"    <Password id=\"$1\" v-model=\"v$.$2.$model\" :class=\"{ 'p-invalid': v$.$2.$invalid && submitted }\" />",
+			"    <label for=\"$1\" :class=\"{ 'p-error': v$.$2.$invalid && submitted }\">$1*</label>",
+			"  </div>",
+			"  <small v-if=\"(v$.$2.$$invalid && submitted) || v$.$2.$$pending.$$response\" class=\"p-error\">",
+			"    {{v$.$2.required.$$message.replace(\"Value\", \"$1\") }}",
+			"  </small>",
+			"</div>",
+		],
+		"description": "PrimeVue Password with Validation"
+	}
+}

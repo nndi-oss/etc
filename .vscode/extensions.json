@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "jacobpfeifer.pfeifer-hurl",
+        "vue.volar",
+        "dbaeumer.vscode-eslint",
+        "42Crunch.vscode-openapi",
+        "jebbs.plantuml",
+        "wayou.vscode-todo-highlight",
+        "tamasfe.even-better-toml",
+        "ricardoerikson.vscode-go-impl-methods"
+    ]
+}
