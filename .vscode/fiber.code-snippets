@@ -1,0 +1,83 @@
+{
+	"iferr-badrequest": {
+		"scope": "go",
+		"prefix": "iferr-400",
+		"body": [
+			"if err != nil {",
+			"\treturn problemdetail.BadRequest(ctx, \"invalid data in request body $1\")",
+			"}"
+		]
+	},
+	"iferr-servererror": {
+		"scope": "go",
+		"prefix": "iferr-500",
+		"body": [
+			"if err != nil {",
+			"\t$1logger.Error(\"$2\", \"error\", err)",
+			"\treturn problemdetail.ServerErrorProblem(ctx, \"failed to process request $3\")",
+			"}"
+		]
+	},
+	"iferr-norows": {
+		"scope": "go",
+		"prefix": "norows",
+		"body": [
+			"if err != nil {",
+			"\tif errors.Is(sql.ErrNoRows, err) {",
+			"\t\treturn []$1{}, nil",
+			"\t}",
+			"\treturn nil, err",
+			"}",
+		]
+	},
+	"iferr-norows-gorm": {
+		"scope": "go",
+		"prefix": "norows-gorm",
+		"body": [
+			"if err != nil {",
+			"\tif errors.Is(sql.ErrNoRows, err) {",
+			"\t\treturn []$1{}, nil",
+			"\t}",
+			"\treturn nil, err",
+			"}",
+		]
+	},
+	"fiber:crud-pattern-1": {
+		"scope": "go",
+		"prefix": "api",
+		"body": [
+			"func Get$1(/** TODO: dependencies **/) fiber.Handler{",
+			"\treturn func (ctx *fiber.Ctx) error  {",
+			"\t\treturn problemdetail.NotImplemented(ctx, \"not yet implemented\")",
+			"\t}",
+			"}",
+			"",
+			"func GetOne$1(/** TODO: dependencies **/) fiber.Handler{",
+			"\treturn func (ctx *fiber.Ctx) error  {",
+			"\t\treturn problemdetail.NotImplemented(ctx, \"not yet implemented\")",
+			"\t}",
+			"}",
+			"",
+			"func PostCreate$1(/** TODO: dependencies **/) fiber.Handler{",
+			"\treturn func (ctx *fiber.Ctx) error  {",
+			"\t\tuserID := authutil.GetAuthUserID(ctx)",
+			"\t\treturn problemdetail.NotImplemented(ctx, \"not yet implemented\")",
+			"\t}",
+			"}",
+			"",
+			"func Put$1(/** TODO: dependencies **/) fiber.Handler{",
+			"\treturn func (ctx *fiber.Ctx) error  {",
+			"\t\tuserID := authutil.GetAuthUserID(ctx)",
+			"\t\treturn problemdetail.NotImplemented(ctx, \"not yet implemented\")",
+			"\t}",
+			"}",
+			"",
+			"func Delete$1(/** TODO: dependencies **/) fiber.Handler{",
+			"\treturn func (ctx *fiber.Ctx) error  {",
+			"\t\tuserID := authutil.GetAuthUserID(ctx)",
+			"\t\treturn problemdetail.NotImplemented(ctx, \"not yet implemented\")",
+			"\t}",
+			"}",
+		]
+	}
+}

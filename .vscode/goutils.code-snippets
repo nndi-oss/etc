@@ -1,0 +1,26 @@
+{
+	"iferr-norows": {
+		"scope": "go",
+		"prefix": "norows",
+		"body": [
+			"if err != nil {",
+			"\tif errors.Is(sql.ErrNoRows, err) {",
+			"\t\treturn []$1{}, nil",
+			"\t}",
+			"\treturn nil, err",
+			"}",
+		]
+	},
+	"iferr-norows-gorm": {
+		"scope": "go",
+		"prefix": "norows-gorm",
+		"body": [
+			"if err != nil {",
+			"\tif errors.Is(sql.ErrNoRows, err) {",
+			"\t\treturn []$1{}, nil",
+			"\t}",
+			"\treturn nil, err",
+			"}",
+		]
+	}
+}
